@@ -12,6 +12,8 @@ SENSORS and COMPONENTS USED:
 3. Single Channel Relay
 4. Leds
 
-Function:
+Basic Function:
  
  Control and fetch data from sensors via a webpage.
+ Basic webpage in html.
+ PHP to forward client requests that execute python/Embedded C scripts for automation tasks on server side.
