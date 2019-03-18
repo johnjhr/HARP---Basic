@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+ position: absolute;
+    top: 14%;
+    left: 1%;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0099ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #0099ff}
+
+.button:active {
+  background-color: #0099fe;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+
+	
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #0099ff;
+}
+#myBar {
+position: absolute;
+    top: 97%;
+    left: 0%;
+  width: 0%;
+  height: 30px;
+  background-color:  #0099ff;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+
+<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+
+<br>
+
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</head>
+<body background="bg.jpg">
+
+<h1><font color="White">HOME AUTOMATION INTERFACE</font> </h1>
+<br>
+<br>
+<br>
+<br>
+<b><font color="White"> Lights </font><b>
+<form action="/ledon.php?hello=true" method="get">
+  <button type="submit">LED ON</button><br>
+  <button type="submit" formaction="/ledoff.php?hello=true">LED OFF</button>
+</form>
+<br>
+<br>
+<b><font color="White"> Sensors </font> <b>
+<form action="/action_page.php" method="get">
+  <button type="submit">TEMPERATURE</button><br>
+  <button type="submit" formaction="/action_page2.php">PRESSURE</button>
+</form>
+<br>
+<br>
+<b> <font color="White"> Fan </font> <b>
+<form action="/action_page.php" method="get">
+  <button type="submit">FAN ON</button><br>
+  <button type="submit" formaction="/action_page2.php">FAN OFF</button>
+</form> 
+
+</body>
+</html>
